@@ -1,2 +1,3 @@
-for i in range(10): 
-  print(i)
+import os
+path = os.environ["PATH"]
+print(path))
