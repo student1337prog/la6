@@ -1,19 +1,14 @@
-name: Workflow z dwoma jobami
-
-on:
-  push:
-  workflow_dispatch:
+name: Hello
+on: workflow_dispatch
 
 jobs:
-  job1:
+  say-hi:
     runs-on: ubuntu-latest
     steps:
-      - name: Pierwszy job
-        run: echo "Job 1: Wykonałem się jako pierwszy!"
+      - run: echo "Hello, GitHub Actions!"
 
-  job2:
+  say-bye:
+    needs: say-hi
     runs-on: ubuntu-latest
-    needs: job1     
     steps:
-      - name: Drugi job
-        run: echo "Job 2: Wykonałem się dopiero po job1!"
+      - run: echo "Goodbye, GitHub Actions!"
